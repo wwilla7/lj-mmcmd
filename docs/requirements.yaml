@@ -7,11 +7,10 @@ dependencies:
   - pip
   - scipy
   - numpy
-  - nbsphinx
-  - m2r >=0.2.1
-  - numpydoc
+  - pint
   - sphinx
   - sphinx_rtd_theme
+  - matplotlib
 
 
 
