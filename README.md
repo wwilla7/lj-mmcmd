@@ -3,6 +3,7 @@ lj-mmcmd
 [//]: # (Badges)
 [![GitHub Actions Build Status](https://github.com/REPLACE_WITH_OWNER_ACCOUNT/lj_mmcmd/workflows/CI/badge.svg)](https://github.com/REPLACE_WITH_OWNER_ACCOUNT/lj_mmcmd/actions?query=workflow%3ACI)
 [![codecov](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/lj-mmcmd/branch/master/graph/badge.svg)](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/lj-mmcmd/branch/master)
+[![Documentation Status](https://readthedocs.org/projects/lj-mmcmd/badge/?version=latest)](https://lj-mmcmd.readthedocs.io/en/latest/?badge=latest)
 
 
 A simple implementation of Metropolis Monte Carlo (MC) simulations and Molecular Dynamics (MD) simulations for Lennard-Jones (LJ) particles
