@@ -12,8 +12,23 @@ Welcome to lj-mmcmd's documentation!
 
    getting_started
    api
-   .. include:: api.rst
 
+
+API Documentation
+=================
+
+.. autosummary::
+   :toctree: autosummary
+
+    lj_mmcmd.mclj.MCLJ
+    lj_mmcmd.mdvvlj.MDvvlj
+
+
+.. autoclass:: lj_mmcmd.mclj.MCLJ
+    :members:
+
+.. autoclass:: lj_mmcmd.mdvvlj.MDvvlj
+    :members:
 
 Indices and tables
 ==================
