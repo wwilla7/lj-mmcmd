@@ -1,9 +1,15 @@
 name: docs
 channels:
+  - conda-forge
 dependencies:
     # Base depends
   - python
   - pip
+  - scipy
+  - numpy
+  - nbsphinx
+  - m2r >=0.2.1
+  - numpydoc
 
 
 
