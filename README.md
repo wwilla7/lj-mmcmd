@@ -5,8 +5,13 @@ lj-mmcmd
 [![codecov](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/lj-mmcmd/branch/master/graph/badge.svg)](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/lj-mmcmd/branch/master)
 
 
-A simple implementation of Metropolis Monte Carlo simulations and Molecular dynamics simulations for Lennard Jones particles
+A simple implementation of Metropolis Monte Carlo (MC) simulations and Molecular Dynamics (MD) simulations for Lennard-Jones (LJ) particles
 
+Potential energies of MC simulations for 50 LJ particles as a function of steps:
+![MC-LJ](lj_mmcmd/lj_mmcmd/data/MC-LJ.png)
+
+Potential energies, kinetic energies, and total energies of MD simulations for 50 LJ particles as a function of steps:
+![MD-LJ](lj_mmcmd/lj_mmcmd/data/MD-LJ.png)
 ### Copyright
 
 Copyright (c) 2021, Liangyue (Willa) Wang

@@ -4,7 +4,7 @@ A simple implementation of Metropolis Monte Carlo simulations and Molecular dyna
 """
 
 # Add imports here
-from .scripts import *
+from .lj_mmcmd import *
 
 # Handle versioneer
 from ._version import get_versions

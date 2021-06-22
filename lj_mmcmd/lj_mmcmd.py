@@ -1,5 +1,5 @@
 """
-scripts.py
+lj_mmcmd.py
 A simple implementation of Metropolis Monte Carlo simulations and Molecular dynamics simulations for Lennard Jones particles
 
 Handles the primary functions

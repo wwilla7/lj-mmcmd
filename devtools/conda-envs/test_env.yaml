@@ -1,4 +1,4 @@
-name: test
+name: ljmmcmd-dev
 channels:
 
   - conda-forge
@@ -8,6 +8,10 @@ dependencies:
     # Base depends
   - python
   - pip
+  - numpy
+  - scipy
+  - pint
+  - matplotlib
 
     # Testing
   - pytest
