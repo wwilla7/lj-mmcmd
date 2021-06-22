@@ -12,6 +12,7 @@ Welcome to lj-mmcmd's documentation!
 
    getting_started
    api
+   .. include:: api.rst
 
 
 Indices and tables
