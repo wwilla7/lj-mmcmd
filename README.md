@@ -7,11 +7,17 @@ lj-mmcmd
 
 A simple implementation of Metropolis Monte Carlo (MC) simulations and Molecular Dynamics (MD) simulations for Lennard-Jones (LJ) particles
 
+An example can be found at `example.ipynb`.
+
 Potential energies of MC simulations for 50 LJ particles as a function of steps:
+
 ![MC-LJ](lj_mmcmd/data/MC-LJ.png)
 
+
 Potential energies, kinetic energies, and total energies of MD simulations for 50 LJ particles as a function of steps:
+
 ![MD-LJ](lj_mmcmd/data/MD-LJ.png)
+
 ### Copyright
 
 Copyright (c) 2021, Liangyue (Willa) Wang

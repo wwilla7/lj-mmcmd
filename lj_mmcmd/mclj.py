@@ -9,6 +9,9 @@ Q_ = ureg.Quantity
 
 
 class MCLJ:
+    """
+    This module is used for carrying out a simple Metropolis Monte Carlo simulation of Lennard Jones particles
+    """
     def __init__(self):
         self.R = Q_(0.001985875, "kcal/mol/K").magnitude
         self.p_accept = 1
@@ -19,7 +22,7 @@ class MCLJ:
     @property
     def epsilon(self):
         """
-        Argon: Q_(0.238, "kcal/mol").magnitude
+        Q_(0.238, "kcal/mol").magnitude for Argon
         :return:
         """
         try:
@@ -40,7 +43,7 @@ class MCLJ:
     @property
     def sigma(self):
         """
-        Argon: Q_(3.405, ureg.angstrom).magnitude
+        Q_(3.405, ureg.angstrom).magnitude for Argon
         :return:
         """
         try:
@@ -62,7 +65,7 @@ class MCLJ:
     @property
     def temperature(self):
         """
-        Default 298 Kelvin
+        298 Kelvin for room temperature
         :return:
         """
         try:
@@ -82,13 +85,13 @@ class MCLJ:
     @property
     def system_size(self):
         """
-        Unit: angstrom
+        Units in angstrom
         :return:
         """
         try:
             return self._system_size
         except AttributeError:
-            print("Set system sizei!")
+            print("Set system size!")
 
     @system_size.setter
     def system_size(self, value):
@@ -120,7 +123,9 @@ class MCLJ:
     def _pbcs(self, p1, p2):
         """
         :param p1: position 1
+
         :param p2: position 2
+
         :return: distance matrix with periodic boundary conditions
         """
         new = p1 - p2 - self.system_size * np.round((p1 - p2) / self.system_size, 0)
@@ -129,8 +134,12 @@ class MCLJ:
 
     def pbcs_distance(self, trajectory):
         """
+        Calculate distance matrix with periodic boundary conditions
+
         :param trajectory: coordinates
-        :return: distance matrix with periodic boundary conditions
+
+        :return: this_distance
+            distance matrix with periodic boundary conditions
         """
         this_distance = np.zeros((self.nparticles, self.nparticles))
         for atom1 in range(self.nparticles):
@@ -141,12 +150,19 @@ class MCLJ:
 
     def calc_potential_energy(self, trajectory):
         """
-        calculate the potential energy of lennard jones fluids
-        V(r) = 4\epsilon[(\frac{\sigma}{r})^12 - (\frac{\sigma}{r})^6]
-        switching function: S = 1 - 6x^5 + 15x^4 - 10x^3
+        Calculate the potential energy of lennard jones fluids
+
+        .. math:: V(r) = 4\epsilon[(\sigma/r)^{12} - (\sigma/r)^6]
+
+        switching function
+
+        .. math:: S = 1 - 6x^5 + 15x^4 - 10x^3
+
         http://docs.openmm.org/latest/userguide/theory.html#lennard-jones-interaction
+
         :param trajectory: coordinates
-        :return:
+
+        :return: potential energies matrix
         """
         this_distance = self.pbcs_distance(trajectory)
         shift = lambda x: 1 - 6 * np.power(x, 5) + 15 * np.power(x, 4) - 10 * np.power(x, 3)
@@ -166,11 +182,12 @@ class MCLJ:
 
     def _possibility(self, pot_energy1, pot_energy2):
         """
-        P_{accept} = \frac{P_{trial}}{P_i}
-                   = \frac{e^{-U_{trial}/RT}}{e^{-U/RT}}
-                   = e^{-(U_{trial} - U_i)/RT}
+        .. math:: P_{accept} = P_{trial}/{P_i} = e^{-U_{trial}/RT}/{e^{-U/RT}} = e^{-(U_{trial} - U_i)/RT}
+
         :param pot_energy1: Potential Energies of last position
+
         :param pot_energy2: Potential Energies of this position
+
         :return:
         """
         #possibility = np.power(np.e, -(pot_energy2 - pot_energy1) / (self.R * self.temperature))
@@ -180,9 +197,12 @@ class MCLJ:
 
     def decision_maker(self, pot_energy1, pot_energy2):
         """
-        use Metropolis Monte Carlo algorithm to decide if the trial run will be accepted
+        Use Metropolis Monte Carlo algorithm to decide if the trial run will be accepted
+
         :param pot_energy1: Potential Energies of last position
+
         :param pot_energy2: Potential Energies of this position
+
         :return:
         """
         if pot_energy1 > pot_energy2:

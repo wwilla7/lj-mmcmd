@@ -14,10 +14,22 @@ Welcome to lj-mmcmd's documentation!
    api
 
 
-
 Indices and tables
 ==================
 
 * :ref:`genindex`
-* :ref:`modindex`
+.. * :ref:`modindex`
 * :ref:`search`
+
+
+Results
+=======
+
+Potential energies of MC simulations for 50 LJ particles as a function of steps:
+
+.. image:: ../lj_mmcmd/data/MC-LJ.png
+
+
+Potential energies, kinetic energies, and total energies of MD simulations for 50 LJ particles as a function of steps:
+
+.. image:: ../lj_mmcmd/data/MD-LJ.png
