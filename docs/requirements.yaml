@@ -10,6 +10,8 @@ dependencies:
   - nbsphinx
   - m2r >=0.2.1
   - numpydoc
+  - sphinx
+  - sphinx_rtd_theme
 
 
 

@@ -6,30 +6,13 @@
 Welcome to lj-mmcmd's documentation!
 =========================================================
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
 
-Getting Started
-===============
+   getting_started
+   api
 
-This page details how to get started with lj-mmcmd.
-
-An example can be found at `example.ipynb`.
-
-
-
-API Documentation
-=================
-
-.. autoclass:: lj_mmcmd.mclj.MCLJ
-    :members:
-
-.. autoclass:: lj_mmcmd.mdvvlj.MDvvlj
-    :members:
-
-.. autosummary::
-   :toctree: autosummary
-
-    lj_mmcmd.mclj.MCLJ
-    lj_mmcmd.mdvvlj.MDvvlj
 
 Indices and tables
 ==================
