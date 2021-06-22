@@ -180,8 +180,10 @@ class MCLJ:
 
         return result
 
-    def _possibility(self, pot_energy1, pot_energy2):
+    def possibility(self, pot_energy1, pot_energy2):
         """
+        Calculate the possibility of accepting or rejecting a trial move
+
         .. math:: P_{accept} = P_{trial}/{P_i} = e^{-U_{trial}/RT}/{e^{-U/RT}} = e^{-(U_{trial} - U_i)/RT}
 
         :param pot_energy1: Potential Energies of last position
@@ -208,7 +210,7 @@ class MCLJ:
         if pot_energy1 > pot_energy2:
             self.accept = True
         else:
-            p_accept = self._possibility(pot_energy1, pot_energy2)
+            p_accept = self.possibility(pot_energy1, pot_energy2)
             mc_nu = np.random.uniform(0, 1, size=(1))[0]
             if mc_nu < p_accept:
                 self.accept = True
