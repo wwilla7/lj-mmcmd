@@ -8,10 +8,9 @@ API Documentation
     lj_mmcmd.mclj.MCLJ
     lj_mmcmd.mdvvlj.MDvvlj
 
-
-.. automodule:: lj_mmcmd.mclj.MCLJ
+.. autoclass:: lj_mmcmd.mclj.MCLJ
     :members:
 
-.. automodule:: lj_mmcmd.mdvvlj.MDvvlj
+.. autoclass:: lj_mmcmd.mdvvlj.MDvvlj
     :members:
 
